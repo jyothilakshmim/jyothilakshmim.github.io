@@ -14,6 +14,14 @@
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="home_keyhandler_hbbtv.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<style>
+		.color-class{
+font-size:20px;
+color:white;
+
+
+}
+</style>
 	</head>
 	<body onload="init()" >
 		<object id="oipfID" type="application/oipfApplicationManager" style="position: absolute; left: 0px; top: 0px; width: 0px; height: 0px;"></object>
@@ -31,7 +39,65 @@
 			</ul>
 		</div>
 		<div id="home" class="container">
-			<h2>See the world through the eyes of our wandering Lens!!</h2>
+		<div class="first">
+			<h2>See the world through us </h2>
 		</div>
+		<div class="second">
+	
+		<div id="result"></div>
+<div id="heap_size_limit"></div>
+<div id="total_heap_size"></div>
+<div id="used_heap_size"></div>
+<div id="result"></div>
+<div id="total_download_time"></div>
+<div id="total_render_time"></div>
+<div id="latency"></div>
+		<div id="dom_lookup_time"></div>
+		<div id="server_connect_time"></div>
+		<div id="page_load_time"></div>
+		<div id="redirection_time"></div>
+		<div id="dom_content_load_time"></div>
+		<div id="total_loadevent_time"></div>
+		</div>
+		
+		</div>
+		<script>
+		window.onload = function()
+{
+    if("performance" in window)
+    {
+        if("memory" in window.performance)
+        {
+            document.getElementById("result").innerHTML = "<span class='color-class'>Performance</span>";
+            document.getElementById("total_heap_size").innerHTML = "<span class='color-class'>heap size: </span>" +"<span class='color-class'>"+ window.performance.memory.totalJSHeapSize +"</span>"+ "<span class='color-class'> bytes</span>";
+           }
+        else
+        {
+            document.getElementById("result").innerHTML = "Memory Profiling API is not supported by this browser";  
+        }
+    }
+    else
+    {
+         document.getElementById("result").innerHTML = "Page Performance API is not supported";   
+    }
+	 if("timing" in window.performance)
+        {
+
+             document.getElementById("total_download_time").innerHTML = "<span class='color-class'>Page download time :</span> " + "<span class='color-class'>"+(window.performance.timing.responseEnd - window.performance.timing.navigationStart) + " <span class='color-class'>ms</span>";
+            document.getElementById("total_render_time").innerHTML = "<span class='color-class'>Page rendering time :</span> " + "<span class='color-class'>"+(window.performance.timing.loadEventStart - window.performance.timing.domLoading)+"</span>" + "<span class='color-class'> ms</san>";
+            document.getElementById("latency").innerHTML = "<span class='color-class'>Latency :</span> " + "<span class='color-class'>"+(window.performance.timing.responseStart - window.performance.timing.fetchStart)+"</span>" + "<span class='color-class'> ms</san>";
+             document.getElementById("dom_lookup_time").innerHTML = "<span class='color-class'>Dom Lookup Time :</span> " + "<span class='color-class'>"+(window.performance.timing.domainLookupEnd - window.performance.timing.domainLookupStart)+"</span>" + "<span class='color-class'> ms</san>";
+            document.getElementById("server_connect_time").innerHTML = "<span class='color-class'>Server Connect time :</span> " + "<span class='color-class'>"+(window.performance.timing.connectEnd - window.performance.timing.connectStart)+"</span>" + "<span class='color-class'> ms</san>";
+            document.getElementById("page_load_time").innerHTML = "<span class='color-class'>Page Load time :</span> " + "<span class='color-class'>"+(window.performance.timing.loadEventStart - window.performance.timing.navigationStart)+"</span>" + "<span class='color-class'> ms</san>";
+            document.getElementById("redirection_time").innerHTML = "<span class='color-class'>Redirection time :</span> " + "<span class='color-class'>"+(window.performance.timing.redirectEnd - window.performance.timing.redirectStart)+"</span>" + "<span class='color-class'> ms</san>";
+            document.getElementById("dom_content_load_time").innerHTML = "<span class='color-class'>Dom Content Load time :</span> " + "<span class='color-class'>"+(window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart)+"</span>" + "<span class='color-class'> ms</san>";
+            
+		}
+        else
+        {
+             document.getElementById("result").innerHTML = "Page Timing API not supported";
+        }
+}
+</script>
 	</body>
 </html>
