@@ -173,8 +173,8 @@ function keyFunction(e) {
 			
 	}
 }
-
-function init() {
+window.addEventListener("load", function() 
+ {
 
 	/*var script2 = document.createElement('script');
 	script2.setAttribute('src', 'keycodes.js');
@@ -202,4 +202,4 @@ function init() {
 		int_keyset.setValue(int_ksVisible);
 	}
 
-}
+})
