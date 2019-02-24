@@ -153,6 +153,22 @@ h3{font-size:16px;padding-bottom: 15px;text-align: center;}
 .content .date-webinar {color: #00728f;font-size: 0.7142857142857143em;font-weight: bold;}
 .content .date-webinar time {color: #333333;font-weight: normal;}
 .content .cont-text {color: #333333;font-size: 0.8571428571428571em;line-height: 14px;padding-top: 10px;}
+div.first
+{
+	 word-break: break-all;
+	
+	float:left;
+	width:750px;
+	
+}
+div.second
+{
+	background:rgba(0,0,0,0.1);
+	width:300px;
+	float:right;
+	font-size:20px;
+	color:white;
+}
 
 .pager {float: left;background:#ecf0f4;height: 30px;width: 158px;position: relative;
 right: 0px;width: 118px \9;}
@@ -176,6 +192,7 @@ right: 0px;width: 118px \9;}
 			</ul>
 		</div>
 		<div  class="container1">
+		<div class="first">
 <div class="container" > <!-- container Starts-->
   
    	<div class="wrapper">
@@ -203,6 +220,24 @@ right: 0px;width: 118px \9;}
         
      </div>
 </div> <!--container Ends-->
+</div>
+ <div class="second">
+
+		<div id="result"></div>
+<div id="heap_size_limit"></div>
+<div id="total_heap_size"></div>
+<div id="used_heap_size"></div>
+<div id="result"></div>
+<div id="total_download_time"></div>
+<div id="total_render_time"></div>
+<div id="latency"></div>
+		<div id="dom_lookup_time"></div>
+		<div id="server_connect_time"></div>
+		<div id="page_load_time"></div>
+		<div id="redirection_time"></div>
+		<div id="dom_content_load_time"></div>
+		<div id="total_loadevent_time"></div>
+		</div>
 </div>
 
 <!--Pagination-->
@@ -243,6 +278,37 @@ var paginate = $.fn.paginate({//options here
   })();
 
 </script>
+<script>
+		window.onload = function()
+{
+    if("performance" in window)
+    {
+            document.getElementById("result").innerHTML = "<span class='color-class'>Performance</span>";
+            
+       
+    }
+    else
+    {
+         document.getElementById("result").innerHTML = "Page Performance API is not supported";   
+    }
+	 if("timing" in window.performance)
+        {
 
+             document.getElementById("total_download_time").innerHTML = "<span class='color-class'>Page download time :</span> " + "<span class='color-class'>"+(window.performance.timing.responseEnd - window.performance.timing.navigationStart) + " <span class='color-class'>ms</span>";
+            document.getElementById("total_render_time").innerHTML = "<span class='color-class'>Page rendering time :</span> " + "<span class='color-class'>"+(window.performance.timing.loadEventStart - window.performance.timing.domLoading)+"</span>" + "<span class='color-class'> ms</san>";
+            document.getElementById("latency").innerHTML = "<span class='color-class'>Latency :</span> " + "<span class='color-class'>"+(window.performance.timing.responseStart - window.performance.timing.fetchStart)+"</span>" + "<span class='color-class'> ms</san>";
+             document.getElementById("dom_lookup_time").innerHTML = "<span class='color-class'>Dom Lookup Time :</span> " + "<span class='color-class'>"+(window.performance.timing.domainLookupEnd - window.performance.timing.domainLookupStart)+"</span>" + "<span class='color-class'> ms</san>";
+            document.getElementById("server_connect_time").innerHTML = "<span class='color-class'>Server Connect time :</span> " + "<span class='color-class'>"+(window.performance.timing.connectEnd - window.performance.timing.connectStart)+"</span>" + "<span class='color-class'> ms</san>";
+            document.getElementById("page_load_time").innerHTML = "<span class='color-class'>Page Load time :</span> " + "<span class='color-class'>"+(window.performance.timing.loadEventStart - window.performance.timing.navigationStart)+"</span>" + "<span class='color-class'> ms</san>";
+            document.getElementById("redirection_time").innerHTML = "<span class='color-class'>Redirection time :</span> " + "<span class='color-class'>"+(window.performance.timing.redirectEnd - window.performance.timing.redirectStart)+"</span>" + "<span class='color-class'> ms</san>";
+            document.getElementById("dom_content_load_time").innerHTML = "<span class='color-class'>Dom Content Load time :</span> " + "<span class='color-class'>"+(window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart)+"</span>" + "<span class='color-class'> ms</san>";
+            
+		}
+        else
+        {
+             document.getElementById("result").innerHTML = "Page Timing API not supported";
+        }
+}
+</script>
 </body>
 </html>

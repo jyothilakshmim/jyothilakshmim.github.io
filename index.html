@@ -66,15 +66,9 @@ color:white;
 {
     if("performance" in window)
     {
-        if("memory" in window.performance)
-        {
             document.getElementById("result").innerHTML = "<span class='color-class'>Performance</span>";
-            document.getElementById("total_heap_size").innerHTML = "<span class='color-class'>heap size: </span>" +"<span class='color-class'>"+ window.performance.memory.totalJSHeapSize +"</span>"+ "<span class='color-class'> bytes</span>";
-           }
-        else
-        {
-            document.getElementById("result").innerHTML = "Memory Profiling API is not supported by this browser";  
-        }
+            
+       
     }
     else
     {
