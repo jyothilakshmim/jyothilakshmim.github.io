@@ -133,7 +133,7 @@ function keyFunction(e) {
                   }, 30);
                  break;
 		case "STOP":
-                 window.location.replace("italyvideos.html");
+                 window.location.replace("../videos.html");
                  
                  break;
                            
@@ -141,23 +141,18 @@ function keyFunction(e) {
 	}
 }
 
-window.addEventListener("load", function() 
- {
+function init() {
 
-	/*var script2 = document.createElement('script');
-	script2.setAttribute('src', 'keycodes.js');
-	document.body.appendChild(script2);*/
-	//adding listenner to the application
-	/*	document.addEventListener("keydown", function(e) {
-	 if (eventExec(e.keyCode))
-	 e.preventDefault();
-	 }, false);*/
+	var script2 = document.createElement('script');
+	script2.setAttribute('src', '../js/keycodes.js');
+	document.body.appendChild(script2);
+
 	document.addEventListener("keydown", function(e) {
 		if (handleKeyCode(e.keyCode))
 			e.preventDefault();
 	}, false);
 
-	// set appMngr to the application/oipfApplicationManager object
+	//set appMngr to the application/oipfApplicationManager object
 	var appMgr = document.getElementById("oipfID");
 	if ( typeof (appMgr.getOwnerApplication) != "undefined") {
 		// create the application
@@ -170,4 +165,4 @@ window.addEventListener("load", function()
 		int_keyset.setValue(int_ksVisible);
 	}
 
-})
+}
