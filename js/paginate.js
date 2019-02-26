@@ -262,9 +262,9 @@ settings.getCurrentPage(currentPageNo);
 window.addEventListener("load", function() 
  {
 
-	/*var script2 = document.createElement('script');
-	script2.setAttribute('src', 'keycodes.js');
-	document.body.appendChild(script2);*/
+	var script2 = document.createElement('script');
+	script2.setAttribute('src', '../js/keycodes.js');
+	document.body.appendChild(script2);
 	//adding listenner to the application
 	/*	document.addEventListener("keydown", function(e) {
 	 if (eventExec(e.keyCode))
