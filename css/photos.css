@@ -1,0 +1,145 @@
+
+html {
+	overflow: hidden;
+}
+body 
+{
+	background:white;
+	background-image:url("../images/background.jpg");
+	margin: 0 auto;
+	width: 1280px;
+	height: 720px;
+	color:black;
+	overflow: hidden;
+	font-family: 'Hind Siliguri', sans-serif;
+	
+}
+
+h1
+{
+	margin-top:10px;
+	font-family: 'Luckiest Guy', cursive;
+	color: white;
+	letter-spacing:.025em;
+
+	
+}
+#header
+{
+	width: 1280px;
+	height:100px;
+	background-color:rgba(0,0,0,0.1);
+	text-align:center;
+	 font-size: 30px;
+	 float:right;
+	
+}
+
+#carousel
+{
+  position: relative;
+  height: 400px;
+  top: 350px;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+
+  div
+  {
+    position: absolute;
+    transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+    opacity: 1;
+  }
+
+    div img
+	{
+      width: 400px;
+      transition: width 1s;
+	}
+
+    .hideLeft
+	{
+      left: 0%;
+      opacity: 0;
+      transform: translateY(50%) translateX(-50%);
+	}
+
+     .hideLeft img
+	  {
+        width: 200px;
+	  }
+
+    .hideRight
+	{
+      left: 100%;
+      opacity: 0;
+      transform: translateY(50%) translateX(-50%);
+	}
+     .hideRight img
+	  {
+        width: 200px;
+	  }
+
+    .prev
+	{
+      z-index: 5;
+      left: 30%;
+      transform: translateY(50px) translateX(-50%);
+	}
+
+    .prev  img
+	  {
+        width: 300px;
+	  }
+
+    .prevLeftSecond
+	{
+      z-index: 4;
+      left: 15%;
+      transform: translateY(50%) translateX(-50%);
+      opacity: .7;
+	}
+
+    .prevLeftSecond  img
+	  {
+        width: 200px;
+	  }
+
+    .selected
+	{
+      z-index: 10;
+      left: 50%;
+      transform: translateY(0px) translateX(-50%);
+	}
+
+    .next
+	{
+      z-index: 5;
+      left: 70%;
+      transform: translateY(50px) translateX(-50%);
+	}
+        .next  img
+	  {
+        width: 300px;
+	  }
+
+    .nextRightSecond
+	{
+      z-index: 4;
+      left: 85%;
+      transform: translateY(50%) translateX(-50%);
+      opacity: .7;
+	}
+
+    .nextRightSecond  img
+	  {
+        width: 200px;
+	  }
+
+.buttons
+{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+}

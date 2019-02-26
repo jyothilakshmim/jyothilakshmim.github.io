@@ -4,24 +4,22 @@
 	<head>
 		<title>Travel World</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Josefin+Slab" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Hind+Siliguri" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet">
 		<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="jquery.js"></script>
-		<script type="text/javascript" src="home_keyhandler_hbbtv.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/home_keyhandler_hbbtv.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<style>
 		.color-class{
-font-size:20px;
-color:white;
-
-
-}
-</style>
+		font-size:20px;
+		color:white;
+		}
+		</style>
 	</head>
 	<body onload="init()" >
 		<object id="oipfID" type="application/oipfApplicationManager" style="position: absolute; left: 0px; top: 0px; width: 0px; height: 0px;"></object>
@@ -33,65 +31,53 @@ color:white;
 		<div id="side">
 			<ul id="navigation">
 				<li><a id="menu1" class="menuimgborder" href="#">Home</a></li>
-				<li><a id="menu2" class="menuimg" href="index1.html">Images</a></li>
-				<li><a id="menu3" class="menuimg" href="#contact">Videos</a></li>
-				<li><a id="menu4" class="menuimg" href="#awards">Schedule</a></li>
+				<li><a id="menu2" class="menuimg" href="#">Images</a></li>
+				<li><a id="menu3" class="menuimg" href="#">Videos</a></li>
+				<li><a id="menu4" class="menuimg" href="#">Info</a></li>
 			</ul>
 		</div>
 		<div id="home" class="container">
-		<div class="first">
-			<h2>See the world through us </h2>
-		</div>
-		<div class="second">
-	
-		<div id="result"></div>
-<div id="heap_size_limit"></div>
-<div id="total_heap_size"></div>
-<div id="used_heap_size"></div>
-<div id="result"></div>
-<div id="total_download_time"></div>
-<div id="total_render_time"></div>
-<div id="latency"></div>
-		<div id="dom_lookup_time"></div>
-		<div id="server_connect_time"></div>
-		<div id="page_load_time"></div>
-		<div id="redirection_time"></div>
-		<div id="dom_content_load_time"></div>
-		<div id="total_loadevent_time"></div>
-		</div>
-		
+			<div class="first">
+				<h2>See the world through us </h2>
+			</div>
+			<div class="second">
+				<div id="heap_size_limit"></div>
+				<div id="total_heap_size"></div>
+				<div id="used_heap_size"></div>
+				<div id="result"></div>
+				<div id="total_download_time"></div>
+				<div id="total_render_time"></div>
+				<div id="latency"></div>
+				<div id="dom_lookup_time"></div>
+				<div id="server_connect_time"></div>
+				<div id="page_load_time"></div>
+				<div id="redirection_time"></div>
+				<div id="dom_content_load_time"></div>
+				<div id="total_loadevent_time"></div>
+			</div>
 		</div>
 		<script>
-		window.onload = function()
-{
-    if("performance" in window)
-    {
-            document.getElementById("result").innerHTML = "<span class='color-class'>Performance</span>";
-            
-       
-    }
-    else
-    {
+		window.onload = function(){
+		if("performance" in window){
+          document.getElementById("result").innerHTML = "<span class='color-class'>Performance</span>";
+        }
+		else{
          document.getElementById("result").innerHTML = "Page Performance API is not supported";   
-    }
-	 if("timing" in window.performance)
-        {
-
-             document.getElementById("total_download_time").innerHTML = "<span class='color-class'>Page download time :</span> " + "<span class='color-class'>"+(window.performance.timing.responseEnd - window.performance.timing.navigationStart) + " <span class='color-class'>ms</span>";
+        }
+	    if("timing" in window.performance){
+			document.getElementById("total_download_time").innerHTML = "<span class='color-class'>Page download time :</span> " + "<span class='color-class'>"+(window.performance.timing.responseEnd - window.performance.timing.navigationStart) + " <span class='color-class'>ms</span>";
             document.getElementById("total_render_time").innerHTML = "<span class='color-class'>Page rendering time :</span> " + "<span class='color-class'>"+(window.performance.timing.loadEventStart - window.performance.timing.domLoading)+"</span>" + "<span class='color-class'> ms</san>";
             document.getElementById("latency").innerHTML = "<span class='color-class'>Latency :</span> " + "<span class='color-class'>"+(window.performance.timing.responseStart - window.performance.timing.fetchStart)+"</span>" + "<span class='color-class'> ms</san>";
-             document.getElementById("dom_lookup_time").innerHTML = "<span class='color-class'>Dom Lookup Time :</span> " + "<span class='color-class'>"+(window.performance.timing.domainLookupEnd - window.performance.timing.domainLookupStart)+"</span>" + "<span class='color-class'> ms</san>";
+            document.getElementById("dom_lookup_time").innerHTML = "<span class='color-class'>Dom Lookup Time :</span> " + "<span class='color-class'>"+(window.performance.timing.domainLookupEnd - window.performance.timing.domainLookupStart)+"</span>" + "<span class='color-class'> ms</san>";
             document.getElementById("server_connect_time").innerHTML = "<span class='color-class'>Server Connect time :</span> " + "<span class='color-class'>"+(window.performance.timing.connectEnd - window.performance.timing.connectStart)+"</span>" + "<span class='color-class'> ms</san>";
             document.getElementById("page_load_time").innerHTML = "<span class='color-class'>Page Load time :</span> " + "<span class='color-class'>"+(window.performance.timing.loadEventStart - window.performance.timing.navigationStart)+"</span>" + "<span class='color-class'> ms</san>";
             document.getElementById("redirection_time").innerHTML = "<span class='color-class'>Redirection time :</span> " + "<span class='color-class'>"+(window.performance.timing.redirectEnd - window.performance.timing.redirectStart)+"</span>" + "<span class='color-class'> ms</san>";
             document.getElementById("dom_content_load_time").innerHTML = "<span class='color-class'>Dom Content Load time :</span> " + "<span class='color-class'>"+(window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart)+"</span>" + "<span class='color-class'> ms</san>";
-            
 		}
-        else
-        {
+        else{
              document.getElementById("result").innerHTML = "Page Timing API not supported";
         }
-}
-</script>
+        }
+		</script>
 	</body>
 </html>
