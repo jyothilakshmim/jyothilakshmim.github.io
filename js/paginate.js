@@ -157,6 +157,9 @@ $(document).ready(function()
 			}
 			
 			break;
+			case 27:
+		 window.location.replace("../videos.html");
+		 break;
 			
 case 13:
 			switch(menuPosition) {
@@ -222,9 +225,7 @@ case 13:
 	}
 settings.getCurrentPage(currentPageNo);
 				break;
-				case 27:
-		 window.location.replace("../videos.html");
-		 break;
+				
 			case 39 :
 			
 			if($(this).attr('data-disabled') === "true") { 

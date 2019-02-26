@@ -172,6 +172,9 @@ $(document).ready(function()
 				document.getElementById("menu" + menuPosition).className = "menuimgborder";
 			}
 			break;
+			case 27:
+		 window.location.replace("../videos.html");
+		 break;
 			
 case 13:
 			switch(menuPosition) {
